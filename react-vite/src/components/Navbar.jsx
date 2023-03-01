@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 const links = [
   { path: '/', text: 'Home' },
@@ -7,25 +7,22 @@ const links = [
   { path: 'login', text: 'Login' },
 ];
 
-const Navbar = () => {
-    return (
-      <nav className="navbar">
+const Navbar = () => (
+  <nav className="navbar">
     <ul>
-      {links.map((link) => {
-        return (
-          <li key={link.text}>
-            <NavLink to={link.path}
-             cstyle={({ isActive }) => ({
+      {links.map((link) => (
+        <li key={link.text}>
+          <NavLink
+            to={link.path}
+            cstyle={({ isActive }) => ({
               color: isActive ? 'red' : undefined,
-            })}>
-        {link.text}
-    </NavLink>
-          </li>
-        );
-      })}
+            })}
+          >
+            {link.text}
+          </NavLink>
+        </li>
+      ))}
     </ul>
   </nav>
-    )
-  };
-  export default Navbar;
-  
+);
+export default Navbar;
